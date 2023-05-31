@@ -8,6 +8,7 @@ import { Shop } from './entities/shop.entity';
 import { User } from './entities/user.entity';
 import { Order } from './entities/order.entity';
 import { Product } from './entities/product.entity';
+import { OrderItem } from './entities/orderItem.entity';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { Product } from './entities/product.entity';
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db.sqlite',
-      entities: [Shop, User, Order, Product],
+      entities: [Shop, User, Order, Product, OrderItem],
       synchronize: true,
     }),
   ],
