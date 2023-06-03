@@ -11,22 +11,19 @@ export class UserService {
     private userRepo: Repository<User>,
   ) {}
 
-  async createUser(name: string, phone: string, email: string, addres: string) {
-    try {
-      const findUser = await this.userRepo.find({
-        where: {
-          phone: phone,
-        },
-      });
-      if (findUser.length)
-        throw new HttpException(
-          'User with this phone is already exist',
-          HttpStatus.CONFLICT,
-        );
-    } catch (error) {
-      throw error;
-    }
+  async createUser(body: CreateUserDto) {
+    const { name, phone, email, addres } = body;
+    const findUser = await this.userRepo.find({
+      where: {
+        phone: phone,
+      },
+    });
+    if (findUser.length)
+      throw new HttpException(
+        'User with this phone is already exist',
+        HttpStatus.CONFLICT,
+      );
     const user = this.userRepo.create({ name, phone, email, addres });
-    return this.userRepo.save(user);
+    return this.userRepo.save(user);;
   }
 }
