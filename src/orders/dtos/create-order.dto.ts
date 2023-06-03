@@ -1,8 +1,8 @@
-import { IsArray, IsNotEmpty } from 'class-validator';
+import { IsArray, IsNotEmpty, IsObject } from 'class-validator';
 import { User } from 'src/entities/user.entity';
 
 export class CreateOrderDto {
-  @IsNotEmpty()
+  @IsObject()
   user: User;
   @IsArray()
   orderItems: [

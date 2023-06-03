@@ -21,17 +21,20 @@ export class OrdersService {
   ) {}
 
   async createOrder(orderData: CreateOrderDto) {
-    //console.log(orderData);
-    console.log(orderData.orderItems);
+    //Finding the user OR creating the new one
+    const {phone} = orderData.user;
+    let user = await this.userRepo.findOne({
+      where:{
+        phone: phone
+      }
+    })
+    if(!user){
+      user = this.userRepo.create(orderData.user);
+      await this.userRepo.save(user);
+    }
+
     const order = new Order();
-    const user = new User();
-
-
-    // user.name = orderData.userName;
-    // user.email = orderData.email;
-    // user.phone = orderData.phone;
-    // user.addres = orderData.address;
-
+    order.user = user;
     const orderItems = [];
 
     for (const itemData of orderData.orderItems) {
@@ -43,11 +46,9 @@ export class OrdersService {
       const orderItem = new OrderItem();
       orderItem.product = product;
       orderItem.quantity = itemData.quantity;
-      console.log(orderItem);
       orderItems.push(orderItem);
     }
     order.items = orderItems;
-    console.log(order);
     return this.orderRepo.save(order);
   }
 }

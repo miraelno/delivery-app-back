@@ -1,13 +1,15 @@
 
 ### Create a new order
-POST http://localhost:8000/orders
+POST http://localhost:8000/orders/create
 Content-Type: application/json
 
 {
-   "userName" : "Name",
-   "email": "sadwd@gmail.com",
-   "phone": "213123141",
-    "address": "test address",
+   "user":{
+        "name": "User From Order",
+        "phone": "094568724",
+        "email": "test@gmail.com",
+        "addres": "dsadwa"
+   },
     "orderItems": [{
         "productId" : 1,
         "quantity": 2
