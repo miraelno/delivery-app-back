@@ -31,18 +31,14 @@ POST http://localhost:8000/user/create
 Content-Type: application/json
 
 {
-   "userName" : "Name",
-   "email": "sadwd@gmail.com",
-   "phone": "213123141",
-    "address": "test address",
-    "orderItems": [{
-        "productId" : 1,
-        "quantity": 2
-    },
-    {
-        "productId" : 2,
-        "quantity": 3
-    },
-    {
-        "productId" : 3,}
-]}
+   "name": "Jhon Dou",
+   "phone": "0936290196",
+   "email": "test@gmail.com",
+   "addres": "dsadwa"
+   }
+
+###Get all shops
+GET http://localhost:8000/shops
+
+###
+GET http://localhost:8000/shops/3/products

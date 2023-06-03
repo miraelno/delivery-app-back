@@ -1,6 +1,0 @@
-###Get all shops
-GET http://localhost:8000/shops
-
-
-###
-GET http://localhost:8000/shops/3/products
