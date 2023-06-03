@@ -1,10 +1,8 @@
 import {
   Entity,
-  Column,
   PrimaryGeneratedColumn,
   ManyToOne,
-  ManyToMany,
-  JoinTable,
+  OneToMany,
 } from 'typeorm';
 import { User } from './user.entity';
 import { Product } from './product.entity';
@@ -16,6 +14,6 @@ export class Order {
   id: number;
   @ManyToOne(() => User)
   user: User;
-  @ManyToOne(() => OrderItem, (orderItem) => orderItem.order)
+  @OneToMany(() => OrderItem, (orderItem) => orderItem.order, { cascade: true, onDelete: "CASCADE" })
   items: OrderItem[];
 }

@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-30T08:25:02.172Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="pnLtRLS_etPOZh-Vgr1q" version="21.3.5" type="device" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-06-02T13:59:09.189Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="ZNu1V_tglQu7U4dPs8Xf" version="21.3.6" type="device" pages="2">
   <diagram name="DB" id="O_uN1VCMDVNeaiqRz71x">
     <mxGraphModel dx="954" dy="616" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -312,10 +312,10 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="S-6kTceQr6AkYQikulUK-1" value="GET /shops" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="200" y="220" width="140" height="30" as="geometry" />
+          <mxGeometry x="200" y="250" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="S-6kTceQr6AkYQikulUK-2" value="GET /shops/{id}/products" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="200" y="320" width="145" height="30" as="geometry" />
+          <mxGeometry x="200" y="310" width="145" height="30" as="geometry" />
         </mxCell>
         <mxCell id="S-6kTceQr6AkYQikulUK-3" value="GET /orders/search" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="390" y="270" width="140" height="30" as="geometry" />
@@ -323,14 +323,11 @@
         <mxCell id="S-6kTceQr6AkYQikulUK-4" value="POST /order" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="390" y="320" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="S-6kTceQr6AkYQikulUK-5" value="GET /shops/{id}" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="200" y="270" width="140" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="S-6kTceQr6AkYQikulUK-7" value="GET /orders/{orderId}" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="390" y="220" width="140" height="30" as="geometry" />
         </mxCell>
         <mxCell id="g5EowipZ0hHpdSeF2Dsy-1" value="GET /profile" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="571" y="220" width="140" height="30" as="geometry" />
+          <mxGeometry x="580" y="270" width="140" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

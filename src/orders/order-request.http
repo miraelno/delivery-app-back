@@ -1,0 +1,48 @@
+
+### Create a new order
+POST http://localhost:8000/orders
+Content-Type: application/json
+
+{
+   "userName" : "Name",
+   "email": "sadwd@gmail.com",
+   "phone": "213123141",
+    "address": "test address",
+    "orderItems": [{
+        "productId" : 1,
+        "quantity": 2
+    },
+    {
+        "productId" : 2,
+        "quantity": 3
+    },
+    {
+        "productId" : 3,
+        "quantity": 1
+    },
+    {
+        "productId" : 4,
+        "quantity": 1
+    }]
+}
+
+### Create a new user
+POST http://localhost:8000/user/create
+Content-Type: application/json
+
+{
+   "userName" : "Name",
+   "email": "sadwd@gmail.com",
+   "phone": "213123141",
+    "address": "test address",
+    "orderItems": [{
+        "productId" : 1,
+        "quantity": 2
+    },
+    {
+        "productId" : 2,
+        "quantity": 3
+    },
+    {
+        "productId" : 3,}
+]}

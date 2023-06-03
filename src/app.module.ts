@@ -9,17 +9,22 @@ import { User } from './entities/user.entity';
 import { Order } from './entities/order.entity';
 import { Product } from './entities/product.entity';
 import { OrderItem } from './entities/orderItem.entity';
+import { UserService } from './user/user.service';
+import { UserController } from './user/user.controller';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
     ShopsModule,
     OrdersModule,
+    UserModule,
     TypeOrmModule.forRoot({
       type: 'sqlite',
       database: 'db.sqlite',
       entities: [Shop, User, Order, Product, OrderItem],
       synchronize: true,
     }),
+    
   ],
   controllers: [AppController],
   providers: [AppService],

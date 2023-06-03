@@ -6,8 +6,8 @@ export class Shop {
   id: number;
   @Column()
   name: string;
-  @Column()
+  @Column({ type: 'decimal' })
   longitude: number;
-  @Column()
+  @Column({ type: 'decimal' })
   latitude: number;
 }
