@@ -22,7 +22,7 @@ import { UserModule } from './user/user.module';
       type: 'sqlite',
       database: 'db.sqlite',
       entities: [Shop, User, Order, Product, OrderItem],
-      synchronize: true,
+      synchronize: true
     }),
     
   ],

@@ -1,19 +1,23 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query } from '@nestjs/common';
 import { CreateOrderDto } from './dtos/create-order.dto';
 import { OrdersService } from './orders.service';
-import { Order } from 'src/entities/order.entity';
 
 @Controller('orders')
 export class OrdersController {
   constructor(private ordersService: OrdersService) {}
-  @Get(':id')
-  getOrderById() {}
 
   @Get('/search')
-  findOrders() {}
+  findOrders(@Query('email') email: string, @Query('phone') phone: string) {
+    console.log('adwdwa');
+    return this.ordersService.findOrders(email, phone);
+  }
+  @Get(':id')
+  getOrderById(@Param('id') id: string) {
+    return this.ordersService.getOrderById(id);
+  }
 
   @Post('/create')
-   createOrder(@Body() createOrderDto: CreateOrderDto) {
+  createOrder(@Body() createOrderDto: CreateOrderDto) {
     return this.ordersService.createOrder(createOrderDto);
   }
 }

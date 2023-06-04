@@ -22,17 +22,18 @@ export class OrdersService {
 
   async createOrder(orderData: CreateOrderDto) {
     //Finding the user OR creating the new one
-    const {phone} = orderData.user;
+    const { phone } = orderData.user;
     let user = await this.userRepo.findOne({
-      where:{
-        phone: phone
-      }
-    })
-    if(!user){
+      where: {
+        phone: phone,
+      },
+    });
+    if (!user) {
       user = this.userRepo.create(orderData.user);
       await this.userRepo.save(user);
     }
 
+    //Creating order items
     const order = new Order();
     order.user = user;
     const orderItems = [];
@@ -50,5 +51,27 @@ export class OrdersService {
     }
     order.items = orderItems;
     return this.orderRepo.save(order);
+  }
+
+  async getOrderById(id: string) {
+    return this.orderRepo.findOne({
+      relations: ['items'],
+      where: {
+        id: parseInt(id),
+      },
+    });
+  }
+
+  async findOrders(email: string, phone: string) {
+    const result =  this.orderRepo.find({
+      relations: ['items', 'user'],
+      where: {
+        user: {
+          email,
+          phone,
+        },
+      },
+    });
+    return result;
   }
 }

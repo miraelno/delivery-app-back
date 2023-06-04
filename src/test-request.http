@@ -5,26 +5,14 @@ Content-Type: application/json
 
 {
    "user":{
-        "name": "User From Order",
-        "phone": "094568724",
+        "name": "Jhon Dou",
+        "phone": "09362901456",
         "email": "test@gmail.com",
         "addres": "dsadwa"
    },
     "orderItems": [{
         "productId" : 1,
         "quantity": 2
-    },
-    {
-        "productId" : 2,
-        "quantity": 3
-    },
-    {
-        "productId" : 3,
-        "quantity": 1
-    },
-    {
-        "productId" : 4,
-        "quantity": 1
     }]
 }
 
@@ -38,6 +26,13 @@ Content-Type: application/json
    "email": "test@gmail.com",
    "addres": "dsadwa"
    }
+
+###Search orders
+GET http://localhost:8000/orders/search?email=test@gmail.com&phone=09362901456
+
+
+###Get order by Id
+GET http://localhost:8000/orders/6
 
 ###Get all shops
 GET http://localhost:8000/shops

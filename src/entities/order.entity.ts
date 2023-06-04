@@ -5,7 +5,6 @@ import {
   OneToMany,
 } from 'typeorm';
 import { User } from './user.entity';
-import { Product } from './product.entity';
 import { OrderItem } from './orderItem.entity';
 
 @Entity()
